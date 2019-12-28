@@ -1,0 +1,49 @@
+
+body {
+    font-family: 'Muli', 'Arial', sans-serif;
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 1.7;
+    color: $color-grey-dark; 
+}
+
+.heading-primary {
+    position: absolute;
+    left: 33%;
+    top: 44%;
+    transform: translate(-50%, -50%);
+    font-size: 3.5rem;
+    color: transparent;
+    background-image: linear-gradient($color-primary, $color-primary-light);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.heading-section {
+    text-transform: capitalize;
+    text-align: center;
+    font-size: 3.4rem;
+
+    &:after {
+        content: " ";
+        display: block;
+        width: 20rem;
+        height: 2px;
+        background-color: $color-primary;
+        margin: 0 auto;
+    }
+}
+
+.heading-small {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+
+}
+
+.paragraph {
+    font-size: 1.8rem;
+    text-align: justify;
+}

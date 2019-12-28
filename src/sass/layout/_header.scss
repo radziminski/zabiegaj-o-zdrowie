@@ -1,0 +1,44 @@
+.header {
+    height: 100vh;
+    background-color: $color-primary;
+    background-image: linear-gradient(rgba($color-primary, 0.3), rgba($color-black, 0.2)), url(img/bg_blurred_deskt.jpg);
+    
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size:cover;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    position: relative;
+    
+    @include respond(small-deskt) {
+        background-image: linear-gradient(rgba($color-black, 0.65), rgba($color-black, 0.0)), url(img/bg_blurred_small_deskt.jpg);
+    }
+    
+    @include respond(tab-land) {
+        background-attachment: scroll;
+    }
+
+    @include respond(phone) {
+        background-image: linear-gradient(rgba($color-black, 0.65), rgba($color-black, 0.0)), url(img/bg_blurred_mobile.jpg);
+    }
+    @include respond(big-deskt) {
+        background-image: linear-gradient(rgba($color-black, 0.65), rgba($color-black, 0.0)), url(img/bg_blurred_4k.jpg);
+    }
+
+    &__arrow-next {
+        color: rgba($color-grey-light, 0.6);
+        position: absolute;
+        font-size: 4.6rem;
+        bottom: 4rem;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: all 0.3s;
+
+        &:hover {
+            color: $color-white;
+        }
+    }
+    
+}

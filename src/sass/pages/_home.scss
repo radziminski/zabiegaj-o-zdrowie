@@ -1,0 +1,57 @@
+.section {
+    
+    &--white {
+        padding: $gutter-section-start 0 $gutter-section-end 0;
+        background-color: $color-white;
+
+        @include respond(tab-land) {
+            padding: 3.5rem 0 8rem 0;
+        }
+        @include respond(tab-port) {
+            padding: 3rem 0 6rem 0;
+        }
+
+        
+    }
+
+    &--grey {
+        padding: $gutter-section-start 0 $gutter-section-end 0;
+        background-color: $color-grey-light;
+
+        @include respond(tab-land) {
+            padding: 3.5rem 0 8rem 0;
+        }
+        @include respond(tab-port) {
+            padding: 3rem 0 6rem 0;
+        }
+
+    }
+
+}
+
+.section-o-nas {
+    .info-icon {
+        font-size: 6rem;
+        display: inline-block;
+        color: $color-primary;
+
+    }
+}
+
+.footer {
+    background-color: $color-primary;
+    color: white;
+    font-size: 1.6rem;
+}
+
+.footer-small {
+    width: 100%;
+    background-color: white;
+    padding: 1rem 0;
+    text-align: center;
+    border-top: 2px solid rgba($color-black, 0.09);
+    &__text {
+        color: $color-grey-dark;
+        font-size: 1.7rem;
+    }
+}
