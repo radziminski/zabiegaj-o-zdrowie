@@ -1,2 +1,2 @@
-# Webpack template
-My starting point for creating any web with webpack: babel js, sass.
+# Zabiegaj o Zdrowie
+Strona internetowa zrobiona na projekt Zwolnieni z Teorii.
