@@ -8,7 +8,6 @@ import $ from 'jquery';
 
 window.addEventListener('scroll', () => {
     const scrollAmount = document.documentElement.scrollTop;
-    console.log(scrollAmount);
     if (scrollAmount < 60) {
         elements.toolbar.classList.add('toolbar--top');
     } else {
@@ -24,9 +23,48 @@ $(document).on('click', 'a[href^="#"]', function (event) {
     }, 500);
 });
 
+elements.logo.addEventListener('click', () => {
+    $('html, body').animate({
+        scrollTop: 0,
+    }, 500);
+})
+
+document.onreadystatechange = function() { 
+    if (document.readyState === "complete") {
+        elements.loader.style.display = 'none';
+        elements.hideWrapper.style.visibility = 'visible';
+    }
+}
 
 
+// // Code displaying loader until the bacground image is loaded:
+// const src = $('header').css('background-image');
+// // Getting only url, (whole bg has also linear gradient)
+// let urlSrc = src.slice(56, src.length);
+// const url = urlSrc.match(/\((.*?)\)/)[1].replace(/('|")/g,'');
 
+// const img = new Image();
+// let DOMLoadFlag = false;
+// img.src = url;
+
+// // If both image and site is ready to show:
+// img.onload = function() {
+//     console.log('Loaded')
+
+//     elements.loader.style.display = 'none';
+//     elements.hideWrapper.style.visibility = 'visible';
+    
+// }
+
+
+// window.addEventListener('DOMContentLoaded', (event) => {
+//     DOMLoadFlag = true;
+// });
+
+// if (img.complete && DOMLoadFlag) {
+//     console.log('loaded')
+//     img.onload();
+// }
 
 // Useful code elements:
 

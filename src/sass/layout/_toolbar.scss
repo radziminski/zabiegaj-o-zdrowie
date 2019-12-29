@@ -24,7 +24,12 @@
         top: 70%;
         transform: translate(-50%, -50%);
         width: 10rem;
-        transition: width 0.3s;
+        transition: width 0.3s, transform 0.3s;
+        cursor: pointer;
+
+        &:hover {
+            transform: translate(-50%, -40%) scale(1.3);
+        }
     }
 
     &__logo-img {
