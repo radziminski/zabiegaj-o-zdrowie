@@ -33,6 +33,7 @@ document.onreadystatechange = function() {
     if (document.readyState === "complete") {
         elements.loader.style.display = 'none';
         elements.hideWrapper.style.visibility = 'visible';
+        elements.hideWrapper.style.opacity = '1';
     }
 }
 

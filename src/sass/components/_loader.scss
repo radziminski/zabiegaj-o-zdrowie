@@ -5,6 +5,11 @@
     transform: translate(-50%, -50%);
 }
 
+.hide-wrapper {
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
 .loader {
     display: inline-block;
     position: relative;
