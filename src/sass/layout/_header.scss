@@ -13,7 +13,7 @@
     position: relative;
     
     @include respond(small-deskt) {
-        background-image: linear-gradient(rgba($color-black, 0.65), rgba($color-black, 0.0)), url(img/bg_blurred_small_deskt.jpg);
+        background-image: linear-gradient(rgba($color-primary, 0.3), rgba($color-black, 0.2)), url(img/bg_blurred_small_deskt.jpg);
     }
     
     @include respond(tab-land) {
@@ -21,10 +21,48 @@
     }
 
     @include respond(phone) {
-        background-image: linear-gradient(rgba($color-black, 0.65), rgba($color-black, 0.0)), url(img/bg_blurred_mobile.jpg);
+        background-image: linear-gradient(rgba($color-primary, 0.3), rgba($color-black, 0.2)), url(img/bg_blurred_mobile.jpg);
     }
     @include respond(big-deskt) {
-        background-image: linear-gradient(rgba($color-black, 0.65), rgba($color-black, 0.0)), url(img/bg_blurred_4k.jpg);
+        background-image: linear-gradient(rgba($color-primary, 0.3), rgba($color-black, 0.2)), url(img/bg_blurred_deskt.jpg);
+    }
+
+    &__text-box {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &__heading-box {
+        display: inline-block;
+        padding: 1.5rem 3rem;
+        background-image: linear-gradient(to left top, rgba($color-primary-super-light, 0.2), rgba($color-white, 0.3));
+        box-shadow: 0 1rem 1rem rgba($color-black, 0.05);
+        z-index: 2;
+
+        animation: moveInLeft 0.6s ease-out;
+        animation-delay: 0.3s;
+        animation-fill-mode: backwards;
+
+        &--shifted {
+            margin-left: 8rem;
+            margin-top: 0.8rem;
+            z-index: 3;
+            animation: moveInRight 0.6s ease-out;
+            animation-delay: 0.3s;
+            animation-fill-mode: backwards;
+        }
+    }
+
+    &__btn-box {
+        display: block;
+        margin-top: 3.2rem;
+        text-align: center;
+
+        animation: fadeInBottom 0.7s ease-out;
+        animation-delay: 0.5s;
+        animation-fill-mode: backwards;
     }
 
     &__arrow-next {

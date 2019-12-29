@@ -1,6 +1,6 @@
 
 body {
-    font-family: 'Muli', 'Arial', sans-serif;
+    font-family: 'Lato', 'Arial', sans-serif;
     font-size: 2rem;
     font-weight: 300;
     line-height: 1.7;
@@ -8,18 +8,21 @@ body {
 }
 
 .heading-primary {
-    position: absolute;
-    left: 33%;
-    top: 44%;
-    transform: translate(-50%, -50%);
-    font-size: 3.5rem;
-    color: transparent;
-    background-image: linear-gradient($color-primary, $color-primary-light);
+    font-size: 4rem;
+    color: $color-primary-dark;
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 2px;
-    -webkit-background-clip: text;
-    background-clip: text;
+    
+}
+
+.heading-secondary {
+    
+    font-size: 2.5rem;
+    color: $color-primary-dark;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 3px;
 }
 
 .heading-section {

@@ -1,0 +1,28 @@
+.socials {
+    list-style-type: none;
+
+        li {
+            padding: 1rem 3rem;
+            display: inline-block;
+        }
+
+    &__link {
+        text-decoration: none;
+        color: $color-grey-dark;
+        font-size: 3.2rem;
+        
+    }
+
+    &__fb {
+        transition: all 0.2s;
+        &:hover {
+            color: $color-facebook;
+        }
+    }
+    &__inst {
+        transition: all 0.2s;
+        &:hover {
+            color: $color-instagram;
+        }
+    }
+}

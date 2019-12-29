@@ -24,9 +24,11 @@ $(document).on('click', 'a[href^="#"]', function (event) {
 });
 
 elements.logo.addEventListener('click', () => {
-    $('html, body').animate({
-        scrollTop: 0,
-    }, 500);
+    if (document.documentElement.scrollTop !== 0) {
+        $('html, body').animate({
+            scrollTop: 0,
+        }, 500);
+    }
 })
 
 document.onreadystatechange = function() { 

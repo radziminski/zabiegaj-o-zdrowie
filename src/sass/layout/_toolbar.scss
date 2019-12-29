@@ -71,20 +71,11 @@
         }
     }
 
-    &__socials-list {
+    &__socials {
         float: right;
-        list-style-type: none;
-
-        li {
-            padding: 1rem 3rem;
-            display: inline-block;
-        }
+        margin-top: -1rem;
     }
 
-    &__socials-link {
-        text-decoration: none;
-        color: $color-grey-dark;
-    }
 }
 
 
