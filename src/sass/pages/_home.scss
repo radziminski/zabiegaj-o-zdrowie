@@ -38,20 +38,3 @@
     }
 }
 
-.footer {
-    background-color: $color-primary;
-    color: white;
-    font-size: 1.6rem;
-}
-
-.footer-small {
-    width: 100%;
-    background-color: white;
-    padding: 0.5rem 0;
-    text-align: center;
-    border-top: 2px solid rgba($color-black, 0.09);
-    &__text {
-        color: $color-grey-dark;
-        font-size: 1.7rem;
-    }
-}

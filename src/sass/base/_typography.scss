@@ -14,6 +14,12 @@ body {
     font-weight: 700;
     letter-spacing: 2px;
     
+    @include respond(tab-land) {
+        font-size: 3.8rem;
+    }
+    @include respond(tab-port) {
+        font-size: 3.5rem;
+    }
 }
 
 .heading-secondary {
@@ -23,12 +29,23 @@ body {
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 3px;
+
+    @include respond(tab-land) {
+        font-size: 2.2rem;
+        letter-spacing: 1.5px;
+    }
+    @include respond(tab-port) {
+        font-size: 2rem;
+        letter-spacing: 1px;
+    }
 }
 
 .heading-section {
     text-transform: capitalize;
     text-align: center;
     font-size: 3.4rem;
+
+    word-spacing: 0.4rem;
 
     &:after {
         content: " ";
@@ -49,4 +66,5 @@ body {
 .paragraph {
     font-size: 1.8rem;
     text-align: justify;
+    text-justify: distribute;
 }

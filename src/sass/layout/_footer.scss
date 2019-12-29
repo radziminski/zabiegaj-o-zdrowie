@@ -1,0 +1,55 @@
+
+.footer {
+    padding: 2rem 0;
+    background-color: $color-primary;
+    background-image: linear-gradient(to left bottom, $color-primary, $color-primary-light);
+    color: $color-grey-light;
+    font-size: 1.6rem;
+
+    &__col-wrapper {
+        height: 20rem;
+        border-right: 2px solid rgba($color-white, 0.4);
+        text-align: center;
+        padding-right: $gutter-horizontal;
+    }
+
+    &__col-title {
+        font-size: 1.8rem;
+        margin-bottom: 0.8rem;
+    }
+
+    &__col-text {
+        font-size: 1.6rem;
+        
+    }
+
+    &__nav {
+        list-style: none;
+
+        li {
+            margin-bottom: 0.8rem;
+        }
+        &-link {
+            font-size: 1.7rem;
+            text-decoration: none;
+            color: $color-white;
+            transition: all 0.2s;
+            
+            &:hover {
+                font-weight: 700;
+            }
+        }
+    }
+}
+
+.footer-small {
+    width: 100%;
+    background-color: white;
+    padding: 0.5rem 0;
+    text-align: center;
+    border-top: 2px solid rgba($color-black, 0.09);
+    &__text {
+        color: $color-grey-dark;
+        font-size: 1.7rem;
+    }
+}
