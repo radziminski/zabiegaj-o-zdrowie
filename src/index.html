@@ -51,10 +51,35 @@
                                     </a>
                                 </li>
                             </ul>
-    
+                        </div>
+                        <div class="toolbar__mobile-icon">
+                            <i class="toolbar__menu-icon js--menu"><ion-icon name="menu"></ion-icon></i>
+                            <i class="toolbar__menu-icon--close icon-hide js--menu-close"><ion-icon name="close"></ion-icon></i>
                         </div>
                     </div>
                 </div>
+                
+                <div class="modal modal--hide js--modal"> </div>
+                
+
+                <div class="mobile-nav mobile-nav--hidden js--mobile-nav">
+                    <i class="mobile-nav__icon--close js--menu-close-small"><ion-icon name="close"></ion-icon></i>
+                    <h2 class="mobile-nav__title">
+                        Zabiegaj o Zdrowie
+                    </h2>
+                    <ul class="mobile-nav__list">
+                        <li class="mobile-nav__element js--mobile-link">
+                            <a href="#section-o-nas" class="mobile-nav__link">O nas</a>
+                        </li>
+                        <li class="mobile-nav__element js--mobile-link">
+                            <a href="#section-zapisy" class="mobile-nav__link">Zapisy</a>
+                        </li>
+                        <li class="mobile-nav__element js--mobile-link">
+                            <a href="#" class="mobile-nav__link">Kontakt</a>
+                        </li>
+                    </ul>
+                </div>
+                
                 <div class="header__text-box">
                     <div class="header__heading-box">
                         <h1 class="heading-primary">
@@ -119,7 +144,7 @@
                             <input type="text" class="contact-form__input-text " placeholder="Coś" name="company">
                             <textarea class="contact-form__input-messege" placeholder="Wiadomość"  required></textarea>
             
-                            <a href="#" class="contact-form__btn btn btn--full">Send!</a>
+                            <a href="#" class="contact-form__btn btn btn--full">Wyślij!</a>
                         </form>
                     </div>
                 </div>
@@ -131,6 +156,7 @@
                             <h3 class="footer__col-title">Kontakt</h3>
                             <span class="footer__col-text">
                                 e-mail: zozdrowie@gmail.com
+                                <br>
                                 tel.: +48 123 456 789
 
                             </span>
@@ -141,10 +167,10 @@
                                 <ul class="footer__nav">
                                     <li class="footer__nav-element">
                                         <a href="#section-o-nas" class="footer__nav-link">O nas</a>
-                                    </li>
+                                    </li> <br>
                                     <li class="footer__nav-element">
                                         <a href="#section-zapisy" class="footer__nav-link">Zapisy</a>
-                                    </li>
+                                    </li> <br>
                                     <li class="footer__nav-element">
                                         <a href="#" class="footer__nav-link">Kontakt</a>
                                     </li>
@@ -152,12 +178,15 @@
                             </span>
                         </div>
                         <div class="col-1-of-4 footer__col-wrapper">
-                            <h3 class="footer__col-title">O projekcie</h3>
-                            <p class="footer__col-text u-justified-text ">
-                                Projekt ralizowany w ramach zwolnionych z teorii przez Marię Radzimińską, Ole Nowak i Marię Radzimińską.
+                            <h3 class="footer__col-title">Realizatorzy</h3>
+                            <p class="footer__col-text u-centered-text ">
+                                Maria Radzimińska <br>
+                                Ola Nowak <br>
+                                Bożydar Wielki <br>
+                                Mikołaj Kowalski <br>
                             </p>
                         </div>
-                        <div class="col-1-of-4">
+                        <div class="col-1-of-4 u-centered-text">
                             <h3 class="footer__col-title">Social Media</h3>
                             <span class="footer__col-text">
                                 <ul class="socials--footer">
@@ -179,7 +208,7 @@
     
                 <footer class="footer-small">
                     <span class="footer-small__text">
-                        Created by Jan Radzimiński 2019
+                        © 2019 Jan Radzimiński
                     </span>
                 </footer>
             </main>

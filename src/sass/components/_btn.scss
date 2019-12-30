@@ -10,6 +10,20 @@
     margin-left: 3rem;
     letter-spacing: 1px;
 
+    @include respond(phone) {
+        display: block;
+        width: 30rem;
+        margin: 0 auto 2rem auto;
+    }
+    
+    @include respond(small-phone-land) {
+        display: inline-block;
+        width: auto;
+        margin: 0;
+        margin-right: 3rem;
+        margin-left: 3rem;
+    }
+
     &--full {
         background-color: $color-primary;
         color: $color-white;
@@ -29,7 +43,7 @@
     &--ghost {
         font-weight: 700;
         background-color: transparent;
-        color: $color-primary;
+        color: $color-white;
         border: 2px solid $color-primary;
         transition: all 0.2s;
 

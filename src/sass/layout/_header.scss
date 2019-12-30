@@ -42,6 +42,18 @@
         @include respond(tab-port) {
             width: 80%;
         }
+        @include respond(phone) {
+            top: 55%;
+            width: 80%;
+        }
+        @include respond(small-phone) {
+            top: 58%;
+            width: 85%;
+        }
+        @include respond(small-phone-land) {
+            top: 61%;
+            width: 85%;
+        }
         
     }
 
@@ -52,6 +64,7 @@
         background-image: linear-gradient(to left top, rgba($color-primary-super-light, 0.4), rgba($color-white, 0.8));
         box-shadow: 0 1rem 1rem rgba($color-black, 0.08);
         z-index: 2;
+        font-size: 1rem;
 
         animation: moveInLeft 0.6s ease-out;
         animation-delay: 0.3s;
@@ -65,6 +78,22 @@
             animation-delay: 0.3s;
             animation-fill-mode: backwards;
         }
+
+        @include respond(phone) {
+            font-size: 2rem;
+            margin: 0 auto;
+
+            &--shifted {
+                margin: 1rem auto;
+            }
+        }
+
+        @include respond(small-phone-land) {
+            margin: 0 auto;
+            &--shifted {
+                margin: 0.5rem auto;
+            }
+        }
     }
 
     &__btn-box {
@@ -75,6 +104,13 @@
         animation: fadeInBottom 0.7s ease-out;
         animation-delay: 0.5s;
         animation-fill-mode: backwards;
+
+        @include respond(small-phone) {
+            margin-top: 1rem;
+        }
+        @include respond(small-phone-land) {
+            margin-top: 0.5rem;
+        }
     }
 
     &__arrow-next {
@@ -92,6 +128,16 @@
 
         @include respond(small-deskt) {
             bottom: 2rem;
+        }
+
+        @include respond(phone) {
+            bottom: 1.6rem;
+        }
+        @include respond(small-phone) {
+            bottom: 1.2rem;
+        }
+        @include respond(small-phone-land) {
+            opacity: 0;
         }
     }
     

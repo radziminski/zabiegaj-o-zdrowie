@@ -6,6 +6,42 @@ import "../sass/main.scss";
 import $ from 'jquery';
 
 
+
+// Mobile Nav
+const closeMobileNav = () => {
+    elements.mobileNav.classList.add('mobile-nav--hide');
+    elements.modal.classList.add('modal--hide');
+    hideMenuCloseIcon();
+}
+
+const showMenuCloseIcon = () => {
+    elements.menuIcon.classList.add('icon-hide');
+    elements.menuIconClose.classList.remove('icon-hide');
+}
+
+const hideMenuCloseIcon = () => {
+    elements.menuIcon.classList.remove('icon-hide');
+    elements.menuIconClose.classList.add('icon-hide');
+}
+
+elements.menuIconClose.addEventListener('click', closeMobileNav);
+elements.menuIconCloseSmall.addEventListener('click', closeMobileNav);
+
+elements.menuIcon.addEventListener('click', () => {
+    elements.mobileNav.classList.remove('mobile-nav--hidden');
+    elements.mobileNav.classList.remove('mobile-nav--hide');
+    elements.modal.classList.remove('modal--hide');
+    showMenuCloseIcon();
+});
+
+elements.modal.addEventListener('click', closeMobileNav);
+
+elements.mobileNavLinks.forEach(link => {
+    link.addEventListener('click', closeMobileNav);
+})
+
+
+// Logo scroll
 window.addEventListener('scroll', () => {
     const scrollAmount = document.documentElement.scrollTop;
     if (scrollAmount < 60) {
