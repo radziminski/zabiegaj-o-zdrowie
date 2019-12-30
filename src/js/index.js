@@ -46,12 +46,9 @@ window.addEventListener('scroll', () => {
     const scrollAmount = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop)
     if (scrollAmount < 100) {
         elements.toolbar.classList.add('toolbar--top');
-        console.log('add');
     } else {
         elements.toolbar.classList.remove('toolbar--top');
-        console.log('remove');
     };
-    console.log(scrollAmount);
 });
 
 $(document).on('click', 'a[href^="#"]', function (event) {

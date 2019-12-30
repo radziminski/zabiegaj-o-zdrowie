@@ -15,6 +15,12 @@
         width: 30rem;
         margin: 0 auto 2rem auto;
     }
+
+    @include respond(small-phone) {
+        width: 28rem;
+        font-size: 1.8rem;
+        padding: 1.3rem 5rem;
+    }
     
     @include respond(small-phone-land) {
         display: inline-block;
@@ -22,6 +28,8 @@
         margin: 0;
         margin-right: 3rem;
         margin-left: 3rem;
+        font-size: 1.8rem;
+        padding: 1rem 5rem;
     }
 
     &--full {

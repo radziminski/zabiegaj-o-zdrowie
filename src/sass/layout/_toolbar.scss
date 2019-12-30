@@ -26,7 +26,8 @@
         }
 
         @include respond(small-phone-land) {
-            padding: 1rem 5% 0.2rem 5%;
+            padding: 0.5rem 10% 0.2rem 10%;
+            height: 6rem;
         }
     }
 
@@ -36,13 +37,16 @@
         top: 70%;
         transform: translate(-50%, -50%);
         width: 10rem;
-        transition: width 0.3s, transform 0.3s;
+        transition: all 0.3s;
         cursor: pointer;
 
         &:hover {
             transform: translate(-50%, -40%) scale(1.3);
         }
 
+        @include respond(small-phone-land) {
+            width: 8rem;
+        }
    
     }
 
@@ -112,8 +116,12 @@
             float: left;
 
             font-size: 5.5rem;
+        }
 
-            
+        @include respond(small-phone-land) {
+            font-size: 4rem;
+            margin-top: 0;
+            height: 5rem;
         }
 
         &--hide {
@@ -154,6 +162,7 @@
         }
         @include respond(small-phone-land) {
             width: 10rem;
+            margin-top: 1rem;
         }
     }
     .toolbar__logo-img {

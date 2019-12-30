@@ -68,7 +68,7 @@
     }
 
     @if ($breakpoint) == small-phone-land {    // 2200 px
-        @media (max-height: 30em) {
+        @media (max-height: 25em) {
             @content;
         }
     }
