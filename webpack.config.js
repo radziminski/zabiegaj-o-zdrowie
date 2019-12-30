@@ -33,7 +33,7 @@ module.exports = {
             {
                 test: /\.css$/,
                 exclude: /node_modules/,
-                use:['style-loader','css-loader']
+                use:['style-loader','css-loader', 'postcss-loader']
             },
 
             // SASS Loader
@@ -45,6 +45,7 @@ module.exports = {
                   'style-loader',
                   // Translates CSS into CommonJS
                   'css-loader',
+                  'postcss-loader',
                   // Compiles Sass to CSS
                   'sass-loader',
                 ],
