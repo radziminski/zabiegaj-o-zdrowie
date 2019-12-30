@@ -40,6 +40,7 @@ elements.mobileNavLinks.forEach(link => {
     link.addEventListener('click', closeMobileNav);
 })
 
+// Toolbar updates
 const updateToolbar = () => {
     const scrollAmount = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop)
     if (scrollAmount < 100) {
@@ -74,6 +75,7 @@ elements.logo.addEventListener('click', () => {
     }
 })
 
+// Loader hide/show
 document.onreadystatechange = function() { 
     if (document.readyState === "complete") {
         elements.loader.style.display = 'none';
