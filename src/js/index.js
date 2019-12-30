@@ -43,7 +43,7 @@ elements.mobileNavLinks.forEach(link => {
 
 // Logo scroll
 window.addEventListener('scroll', () => {
-    const scrollAmount = document.documentElement.scrollTop;
+    const scrollAmount = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop)
     if (scrollAmount < 60) {
         elements.toolbar.classList.add('toolbar--top');
     } else {
