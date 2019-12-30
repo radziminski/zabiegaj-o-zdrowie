@@ -12,6 +12,9 @@
 
     backface-visibility: hidden;
 
+    @include respond(small-phone-land) {
+        padding-bottom: 1.5rem;
+    }
 
     &__content {
         padding: 2rem 10% 0.5rem 10%;
@@ -26,8 +29,8 @@
         }
 
         @include respond(small-phone-land) {
-            padding: 0.5rem 10% 0.2rem 10%;
-            height: 6rem;
+            padding: 0.1rem 10% 0.2rem 10%;
+            height: 5.5rem;
         }
     }
 
@@ -110,6 +113,7 @@
         display: none;
         height: 7rem;
         margin-top: -1rem;
+        padding-left: 3rem;
         
         @include respond(tab-port) {
             display: inline-block;
@@ -141,9 +145,12 @@
     transform: scale(0.9) translateY(5rem);
     box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
 
+    @include respond(small-phone) {
+        transform: scale(0.9) translateY(2rem);
+    }
+
     @include respond(small-phone-land) {
         transform: none;
-
     }
 
     .toolbar__logo {
