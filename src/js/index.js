@@ -40,16 +40,23 @@ elements.mobileNavLinks.forEach(link => {
     link.addEventListener('click', closeMobileNav);
 })
 
-
-// Logo scroll
-window.addEventListener('scroll', () => {
+const updateToolbar = () => {
     const scrollAmount = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop)
     if (scrollAmount < 100) {
         elements.toolbar.classList.add('toolbar--top');
     } else {
         elements.toolbar.classList.remove('toolbar--top');
     };
+}
+
+// Load
+window.addEventListener('load', () => {
+    updateToolbar();
 });
+
+
+// Logo scroll
+window.addEventListener('scroll', updateToolbar);
 
 $(document).on('click', 'a[href^="#"]', function (event) {
     event.preventDefault();
