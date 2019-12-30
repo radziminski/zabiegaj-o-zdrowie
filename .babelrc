@@ -3,7 +3,7 @@
       ["@babel/env", {
           "targets": {
               "browsers": [
-                  "last 8 versions",
+                  "last 6 versions",
                   "ie >= 8"
               ]
           }
