@@ -44,11 +44,12 @@ elements.mobileNavLinks.forEach(link => {
 // Logo scroll
 window.addEventListener('scroll', () => {
     const scrollAmount = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop)
-    if (scrollAmount < 60) {
+    if (scrollAmount < 100) {
         elements.toolbar.classList.add('toolbar--top');
     } else {
         elements.toolbar.classList.remove('toolbar--top');
     };
+    console.log(scrollAmount);
 });
 
 $(document).on('click', 'a[href^="#"]', function (event) {
