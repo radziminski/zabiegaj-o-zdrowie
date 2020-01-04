@@ -1,48 +1,81 @@
 .btn {
-    display: inline-block;
-    font-size: 2rem;
-    font-weight: 500;
-    padding: 1.5rem 7rem;
-    border-radius: 5rem;
-    text-decoration: none;
-    text-transform: uppercase;
-    margin-right: 3rem;
-    margin-left: 3rem;
-    letter-spacing: 1px;
+
+    &,
+    &:link,
+    &:visited {
+        display: inline-block;
+        
+        padding: 1.5rem 7rem;
+        border-radius: 5rem;
+        text-decoration: none;
+        text-transform: uppercase;
+        margin-right: 3rem;
+        margin-left: 3rem;
+        letter-spacing: 1px;
+
+        //burron
+        cursor: pointer;
+        font: inherit;
+        font-size: 2rem;
+        font-weight: 500;
+        
+    }
 
     @include respond(phone) {
-        display: block;
-        width: 30rem;
-        margin: 0 auto 2rem auto;
+        &,
+        &:link,
+        &:visited {
+            display: block;
+            width: 30rem;
+            margin: 0 auto 2rem auto;
+        }
     }
 
     @include respond(small-phone) {
-        width: 28rem;
-        font-size: 1.8rem;
-        padding: 1.3rem 5rem;
+        &,
+        &:link,
+        &:visited {
+            width: 28rem;
+            font-size: 1.8rem;
+            padding: 1.3rem 5rem;
+        }
+
+        &--short {
+            width: 22rem;
+        }
     }
     
     @include respond(small-phone-land) {
-        display: inline-block;
-        width: auto;
-        margin: 0;
-        margin-right: 3rem;
-        margin-left: 3rem;
-        font-size: 1.8rem;
-        padding: 1rem 5rem;
+        &,
+        &:link,
+        &:visited {
+            display: inline-block;
+            width: auto;
+            margin: 0;
+            margin-right: 3rem;
+            margin-left: 3rem;
+            font-size: 1.8rem;
+            padding: 1rem 5rem;
+        }
     }
 
     &--full {
-        background-color: $color-primary;
-        color: $color-white;
-        transition: all 0.2s;
+        &,
+        &:link,
+        &:visited {
+            background-color: $color-primary;
+            color: $color-white;
+            transition: all 0.2s;
+            border: none;
+        }
 
         &:hover {
-
             transform: translateY(-0.4rem);
         }
 
-        &:active {
+        &:active,
+        &:focus {
+            outline: none;
             transform: translateY(0.2rem);
         }
 

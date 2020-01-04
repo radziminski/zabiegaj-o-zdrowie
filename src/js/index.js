@@ -42,7 +42,7 @@ elements.mobileNavLinks.forEach(link => {
 
 // Toolbar updates
 const updateToolbar = () => {
-    const scrollAmount = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop)
+    const scrollAmount = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop);
     if (scrollAmount < 100) {
         elements.toolbar.classList.add('toolbar--top');
     } else {
@@ -59,9 +59,12 @@ window.addEventListener('load', () => {
 // Logo scroll
 window.addEventListener('scroll', updateToolbar);
 
+
 $(document).on('click', 'a[href^="#"]', function (event) {
     event.preventDefault();
-    const target = $($.attr(this, 'href')).offset().top - 100;
+    const scrollOffset = (($(window).height() - $('.toolbar').outerHeight() - $($.attr(this, 'href')).outerHeight()) / 2);
+    let target = $($.attr(this, 'href')).offset().top - scrollOffset - $('.toolbar').outerHeight();
+    if (scrollOffset <= 0) target = $($.attr(this, 'href')).offset().top - $('.toolbar').outerHeight();
     $('html, body').animate({
         scrollTop: target,
     }, 500);

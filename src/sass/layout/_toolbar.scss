@@ -10,6 +10,8 @@
     box-shadow: 0 1rem 1rem rgba($color-black, 0.05);
     z-index: 800;
 
+    
+
     backface-visibility: hidden;
 
     @include respond(small-phone-land) {
@@ -138,46 +140,47 @@
         display: none;
     }
     
-}
 
-
-.toolbar--top {
-    transform: scale(0.9) translateY(5rem);
-    box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
-
-    @include respond(small-phone) {
-        transform: scale(0.9) translateY(2rem);
-    }
-
-    @include respond(small-phone-land) {
-        transform: none;
-    }
-
-    .toolbar__logo {
-        width: 20rem;
-        @include respond(tab-land) {
-            width: 18rem;
-        }
-        @include respond(tab-port) {
-            width: 18rem;
-        }
-        @include respond(phone) {
-            width: 16rem;
-        }
+    &--top {
+        transform: scale(0.9) translateY(5rem);
+        box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
+    
         @include respond(small-phone) {
-            width: 13rem;
+            transform: scale(0.9) translateY(2rem);
         }
+    
         @include respond(small-phone-land) {
-            width: 10rem;
-            margin-top: 1rem;
+            transform: none;
         }
     }
-    .toolbar__logo-img {
-        filter: drop-shadow(2px 2px 0 white)
-            drop-shadow(-2px 2px 0 white)
-            drop-shadow(2px -2px 0 white)
-            drop-shadow(-2px -2px 0 white);
+    
+    &--top &__logo {
+            width: 20rem;
+            @include respond(tab-land) {
+                width: 18rem;
+            }
+            @include respond(tab-port) {
+                width: 18rem;
+            }
+            @include respond(phone) {
+                width: 16rem;
+            }
+            @include respond(small-phone) {
+                width: 13rem;
+            }
+            @include respond(small-phone-land) {
+                width: 10rem;
+                margin-top: 1rem;
+            }
     }
 
-
+    &--top &__logo-img {
+            filter: drop-shadow(2px 2px 0 white)
+                drop-shadow(-2px 2px 0 white)
+                drop-shadow(2px -2px 0 white)
+                drop-shadow(-2px -2px 0 white);
+    }
+    
+    
+    
 }
