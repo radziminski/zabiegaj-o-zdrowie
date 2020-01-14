@@ -35,15 +35,8 @@ const formSubmit = (event) => {
     const email = getFormVal('email');
     const message = getFormVal('message');
 
-    saveMessage(firstName, lastName, email, message);
-    elements.contactForm.reset();
-}
-
-const getFormVal = (inputId) => {
-    return document.getElementById(inputId).value;
-}
-
-const saveMessage = (firstName, lastName, email, message) => {
+    elements.modal.classList.remove('modal--hide');
+    elements.formSend.classList.remove('u-hide');
     const newMessageRef = messagesRef.push();
     newMessageRef.set({
         firstName: firstName,
@@ -51,12 +44,31 @@ const saveMessage = (firstName, lastName, email, message) => {
         email: email,
         message: message
     })
+    .then(() => {
+        elements.sendMsg.classList.remove('u-hide');
+        elements.formLoader.classList.add('u-hide');
+    })
+    .catch(err => {
+        alert(`Nie udało się wysłać twojego zgłoszenia. Sprawdź swoje połącznie internetowe i spróbuj jeszcze raz.
+        W razie kolejnych niepowodzeń skontaktuj się z nami. Błąd: ${err}`);
+    })
+    elements.contactForm.reset();
+    
+}
+
+const getFormVal = (inputId) => {
+    return document.getElementById(inputId).value;
+}
+
+const saveMessage = (firstName, lastName, email, message) => {
+    
 }
 
 // Mobile Nav
 const closeMobileNav = () => {
     elements.mobileNav.classList.add('mobile-nav--hide');
     elements.modal.classList.add('modal--hide');
+    elements.formSend.classList.add('u-hide');
     hideMenuCloseIcon();
 }
 

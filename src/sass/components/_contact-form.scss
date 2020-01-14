@@ -123,3 +123,18 @@
         text-align: center;
     }
 }
+
+.form-send {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 50rem;
+    height: 80%;
+    max-height: 30rem;
+    background-color: $color-white;
+    z-index: 990;
+    padding: 11rem 2rem;
+    text-align: center;
+}
