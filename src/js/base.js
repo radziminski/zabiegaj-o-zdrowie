@@ -9,4 +9,5 @@ export const elements = {
     menuIconCloseSmall: document.querySelector('.js--menu-close-small'),
     modal: document.querySelector('.js--modal'),
     mobileNavLinks: document.querySelectorAll('.js--mobile-link'),
+    contactForm: document.querySelector('.js--form'),
 }

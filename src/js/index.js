@@ -4,8 +4,54 @@ import {elements} from './base'
 // Other imports
 import "../sass/main.scss";
 import $ from 'jquery';
+import firebase from 'firebase/app';
+import 'firebase/database'; // If using Firebase database
 
 
+// FIREBASE config
+var firebaseConfig = {
+    apiKey: "AIzaSyBFTpmOR71Bej2p0iq6N8-2gFPj94Duo80",
+    authDomain: "zabiegaj-o-zdrowie.firebaseapp.com",
+    databaseURL: "https://zabiegaj-o-zdrowie.firebaseio.com",
+    projectId: "zabiegaj-o-zdrowie",
+    storageBucket: "zabiegaj-o-zdrowie.appspot.com",
+    messagingSenderId: "956401714204",
+    appId: "1:956401714204:web:5f1040f60269a532760bd9"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+const messagesRef = firebase.database().ref('messages');
+
+// Form send listener
+elements.contactForm.addEventListener('submit', event => formSubmit(event));
+
+const formSubmit = (event) => {
+    event.preventDefault();
+    console.log('Form sent!');
+    // Getting values:
+    const firstName = getFormVal('first-name');
+    const lastName = getFormVal('last-name');
+    const email = getFormVal('email');
+    const message = getFormVal('message');
+
+    saveMessage(firstName, lastName, email, message);
+    elements.contactForm.reset();
+}
+
+const getFormVal = (inputId) => {
+    return document.getElementById(inputId).value;
+}
+
+const saveMessage = (firstName, lastName, email, message) => {
+    const newMessageRef = messagesRef.push();
+    newMessageRef.set({
+        firstName: firstName,
+        lastName: lastName,
+        email: email,
+        message: message
+    })
+}
 
 // Mobile Nav
 const closeMobileNav = () => {

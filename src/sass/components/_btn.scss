@@ -41,7 +41,7 @@
         }
 
         &--short {
-            width: 22rem;
+            width: 20rem;
         }
     }
     
@@ -71,6 +71,7 @@
 
         &:hover {
             transform: translateY(-0.4rem);
+            background-color: $color-primary-medium;
         }
 
         &:active,
@@ -83,7 +84,7 @@
 
     &--ghost {
         font-weight: 700;
-        background-color: transparent;
+        background-color: rgba($color-primary, 0.1);
         color: $color-white;
         border: 2px solid $color-primary;
         transition: all 0.2s;

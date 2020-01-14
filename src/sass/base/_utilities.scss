@@ -1,5 +1,9 @@
 .u-margin-bottom-medium {
-    margin-bottom: 4rem;
+    margin-bottom: 4rem !important;
+}
+
+.u-margin-bottom-small {
+    margin-bottom: 2rem !important;
 }
 
 .u-centered-text {
@@ -9,4 +13,27 @@
 .u-justified-text {
     text-align: justify;
     text-justify: distribute;
+}
+
+.u-link {
+    &:link,
+    &:visited {
+        text-decoration: none;
+        transition: all 0.2s;
+        color: $color-grey;
+        font-weight: 500;
+    }
+    &:hover,
+    &:active {
+        color: $color-primary-medium;
+    }
+    
+}
+
+.u-bolded {
+    font-weight: 500;
+}
+
+.u-small-line-height {
+    line-height: 2rem;
 }
