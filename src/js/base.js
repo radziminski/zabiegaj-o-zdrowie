@@ -10,7 +10,14 @@ export const elements = {
     menuIconCloseSmall: document.querySelector('.js--menu-close-small'),
     modal: document.querySelector('.js--modal'),
     mobileNavLinks: document.querySelectorAll('.js--mobile-link'),
+    // Contact Form
     contactForm: document.querySelector('.js--form'),
     sendMsg: document.querySelector('.js--send-msg'),
     formSend: document.querySelector('.js--form-send'),
+    btnModalClose: document.querySelector('.js--button-close-modal'),
+    morePeople: document.querySelector('.js--other-people'),
+    addPersonBtn: document.querySelector('.js--add-person'),
+    removePersonBtn: document.querySelector('.js--remove-person'),
+
+    adminDash: document.querySelector('.js--admin'),
 }

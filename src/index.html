@@ -7,7 +7,7 @@
         <!-- <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700&display=swap" rel="stylesheet"> -->
         <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
 
-        <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
+        <link rel="shortcut icon" type="image/png" href="./img/favicon.png"/>
         <title>Zabiegaj o zdrowie</title>
     </head>
 
@@ -64,12 +64,14 @@
                 </div>
                 
                 <div class="modal modal--hide js--modal">&nbsp;</div>
-                <div class="form-send u-hide js--form-send ">
-                    <div class="loader-box js--form-loader">
+
+                <div class="form-send  u-hide js--form-send ">
+                    <div class="loader-box  js--form-loader">
                         <div class="loader"><div></div><div></div></div>
                     </div>
                     <div class="form-send__success u-hide js--send-msg">
-                        Twoje zgłoszenie zostało wysłane!
+                        <div class="form-send__msg">Twoje zgłoszenie zostało wysłane!</div>
+                        <button class="btn btn--full-2 js--button-close-modal">Powrót</button>
                     </div>
                 </div>
 
@@ -131,7 +133,7 @@
                         <div class="col-1-of-3 u-centered-text">
                             <i class="info-icon"><ion-icon name="calendar"></ion-icon></i>
                             <h3 class="heading-small">29 II 2020</h3>
-                            <p class="paragraph">Bieg odbędzie się 29 lutego (sobota), o godzinie 10:00 w <a href="https://goo.gl/maps/q6H4URQNhTHQUqGQA" class="u-link" target="_blank">Kampinoskim Parku Narodowym</a>. Dystans biegu wynosi 5 kilometrów. Na nasze wydarzenie zapraszamy wszystkich chętnych, najlepiej z całą rodziną. Będzie to okazja, żeby w miłej atmosferze spędzić sobotni poranek, zarazem wspomagając drugiego człowieka.
+                            <p class="paragraph">Bieg odbędzie się 29 lutego (sobota), o godzinie 10:00 w <a href="https://goo.gl/maps/q6H4URQNhTHQUqGQA" class="u-link" target="_blank">Kampinoskim Parku Narodowym na polanie Jakubowej, przy siedzibie KPN</a>. Dystans biegu wynosi 5 kilometrów. Na nasze wydarzenie zapraszamy wszystkich chętnych, najlepiej z całą rodziną. Będzie to okazja, żeby w miłej atmosferze spędzić sobotni poranek, zarazem wspomagając drugiego człowieka.
                             </p>
                         </div>
                         <!-- <div class="col-1-of-4 u-centered-text">
@@ -155,35 +157,49 @@
                             <h2 class="contact-form__section-title">Dane Osobowe</h2>
 
                             <div class="contact-form__input-field">
+                                <label for="first-name" class="contact-form__label">Imię:</label>
                                 <div class="contact-form__icon-wrapper">
                                     <i class="contact-form__icon"><ion-icon name="person"></ion-icon></i>
                                 </div>
                                 <input type="text" class="contact-form__input-text" placeholder="Imię" id="first-name" required>
-                                <label for="first-name" class="contact-form__label">Name</label>
                             </div>
 
                             <div class="contact-form__input-field">
+                                <label for="last-name" class="contact-form__label">Nazwisko:</label>
                                 <div class="contact-form__icon-wrapper">
                                     <i class="contact-form__icon"><ion-icon name="person"></ion-icon></i>
                                 </div>
                                 <input type="text" class="contact-form__input-text" placeholder="Nazwisko" id="last-name" required>
-                                <label for="last-name" class="contact-form__label">Last Name</label>
                             </div>
 
                             <h2 class="contact-form__section-title">Dane Konaktowe</h2>
                             <div class="contact-form__input-field">
+                                <label for="email" class="contact-form__label">Email:</label>
                                 <div class="contact-form__icon-wrapper">
                                     <i class="contact-form__icon"><ion-icon name="mail"></ion-icon></i>
                                 </div>
                                 <input type="email" class="contact-form__input-text" placeholder="Email" id="email" required>
-                                <label for="email" class="contact-form__label">Email</label>
                             </div>
-
+                            
+                            <label for="email" class="contact-form__label-msg">Dodatkowe informacje:</label>
                             <textarea class="contact-form__input-messege" placeholder="Dodatkowe informacje..." id="message"></textarea>
                             
+                            <div class="contact-form__other-people js--other-people" style="display: none;">
+                                
+                            </div>
+
+                            <div class="contact-form__msg"><span class="u-bolded">Uwaga!</span> Jeśli zamierzasz przyjść na bieg z rodziną/znajomymi prosimy o zarejestrowanie każdej osoby oddzielnie.</div>
+                            <a class="btn btn--full-small js--remove-person" style="display: none;">- Usuń osobę</a>
+                            <a class="btn btn--full-small u-margin-bottom-small js--add-person">+ Dodaj osobę</a>
+                            
+                            
+
                             <div class="contact-form__input-checkbox-field">
-                                <input type="checkbox" class="contact-form__input-checkbox" name="rules" required> 
-                                <label for="rules" class="contact-form__checkbox-label">Zapoznałem/am się z regulaminem Kampinowskiego Parku Narodowego.</label>
+                                Zapoznałem/am się z <a href="https://www.kampinoski-pn.gov.pl/turystyka/regulamin?fbclid=IwAR0MXapC_A1yA98UsnaLgk3w0QbOaaS6P8YfQ6gRbk47w9F9LJ7KAdGszMM" class="u-link" target="_blank">regulaminem Kampinowskiego Parku Narodowego</a>.
+                                <label for="rules" class="contact-form__label-checkbox">
+                                    <input type="checkbox" class="contact-form__input-checkbox" id="rules" required> 
+                                    <span class="contact-form__checkmark"><div class="contact-form__checkmark--wrapper">&nbsp;</div></span>
+                                </label>
                             </div>
                                                                   
                             <div class="contact-form__btn"><button class="contact-form__btn btn btn--full btn--short u-margin-bottom-small">Wyślij!</button></div>
@@ -215,12 +231,15 @@
                                     </li> <br>
                                     <li class="footer__nav-element">
                                         <a href="#" class="footer__nav-link">FAQ</a>
+                                    </li> <br>
+                                    <li class="footer__nav-element">
+                                        <a class="footer__nav-link js--admin">Admin</a>
                                     </li>
                                 </ul>
                             </span>
                         </div>
                         <div class="col-1-of-4 footer__col-wrapper">
-                            <h3 class="footer__col-title">Realizatorzy</h3>
+                            <h3 class="footer__col-title">Realizatorki</h3>
                             <p class="footer__col-text u-centered-text u-small-line-height">
                                 Zuzanna Kopacz  <br>
                                 Maria Radzimińska <br>

@@ -6,6 +6,10 @@
     background-color: $color-white;
     box-shadow: 0 2rem 3rem rgba($color-black, 0.08);
     text-align: left;
+
+    @include respond (small-phone) {
+        max-width: 98%;
+    }
     
     &__title {
         display: block;
@@ -23,12 +27,21 @@
         }
     }
 
+    &__msg {
+        display: block;
+        font-size: 1.6rem;
+        margin-top: 0.5rem;
+    }
+
     &__section-title {
         display: inline-block;
         font-size: 2rem;
         color: $color-primary;
         margin-bottom: 1rem;
-        
+
+        @include respond(small-phone) {
+            margin-bottom: 0.1rem;
+        }
     }
 
     &__input-field {
@@ -73,10 +86,32 @@
             outline: none;
             border: 2px solid $color-primary;
         }
+
+        @include respond (phone) {
+            margin-top: 4rem;
+        }
     }
 
     &__label {
         display: none;
+        @include respond (phone) {
+            display: block;
+            position: absolute;
+            top: -3.2rem;
+            left: 0;
+            font-size: 1.8rem;
+            font-weight: 500;
+        }
+
+        
+        &-msg {
+            display: none;
+            @include respond (phone) {
+                display: block;
+                font-size: 1.8rem;
+                font-weight: 500;
+            }
+        }
     }
 
 
@@ -107,13 +142,82 @@
         }
     }
 
+    &__other-people {
+        display: block;
+        border: 0px solid rgba($color-black, 0.05);
+    }
+
     &__input-checkbox-field {
+        
+        display: block;
         margin-bottom: 3rem;
         margin-left: 1rem;
+        margin-top: 2rem;
+        position: relative;
+        padding-left: 4rem;
+
+        @include respond (phone) {
+            font-size: 1.6rem;
+        }
+
     }
-    
-    &__checkbox-label {
-        margin-left: 1rem;
+
+    &__input-checkbox {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        height: 2.8rem;
+        width: 2.8rem;
+        opacity: 0;
+        cursor: pointer;
+        border-radius: 50%;
+    }
+
+    &__checkmark {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        height: 2.8rem;
+        width: 2.8rem;
+        background-color: transparent;
+        border: 3px solid $color-primary;
+        border-radius: 50%;
+        cursor: pointer;
+
+        &--wrapper {
+            display: block;
+            background-color: transparent;
+            height: 100%;
+            width: 100%;
+            position: relative;
+            visibility: hidden;
+
+            &:after {
+                content: " ";
+                display: block;
+                background-color: $color-primary;
+                height: 1.4rem;
+                width: 1.4rem;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                border-radius: 50%;
+                
+            }
+        }
+
+        
+    }
+
+    &__checkmark:hover &__checkmark--wrapper {
+        visibility: visible;
+    }
+
+    &__input-checkbox:checked ~ &__checkmark &__checkmark--wrapper {
+        visibility: visible;
     }
 
     &__btn {
@@ -132,9 +236,28 @@
     width: 80%;
     max-width: 50rem;
     height: 80%;
-    max-height: 30rem;
+    max-height: 20rem;
+    border-radius: 5px;
     background-color: $color-white;
+    border: 5px solid $color-primary;
+    box-shadow: 0 1rem 3rem rgba($color-black, 0.3);
     z-index: 990;
-    padding: 11rem 2rem;
+    padding: 2rem 3rem;
     text-align: center;
+
+    &__success {
+        display: block;
+        padding: 0 1rem;
+        text-align: center;
+    }
+
+    &__msg {
+        font-size: 2rem;
+        padding: 1rem;
+        margin-bottom: 2rem;
+        @include respond(small-phone) { 
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+    }
 }

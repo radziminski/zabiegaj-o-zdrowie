@@ -6,7 +6,10 @@ import "../sass/main.scss";
 import $ from 'jquery';
 import firebase from 'firebase/app';
 import 'firebase/database'; // If using Firebase database
+import 'firebase/auth';
 
+// Web init
+let additionalPeopleCounter = 0;
 
 // FIREBASE config
 var firebaseConfig = {
@@ -22,6 +25,7 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 const messagesRef = firebase.database().ref('messages');
+const firebaseAuth = firebase.auth();
 
 // Form send listener
 elements.contactForm.addEventListener('submit', event => formSubmit(event));
@@ -34,7 +38,16 @@ const formSubmit = (event) => {
     const lastName = getFormVal('last-name');
     const email = getFormVal('email');
     const message = getFormVal('message');
+    let additionalPeople = { };
 
+    for (let addPeople = 0; addPeople < additionalPeopleCounter; addPeople++) {
+        const addFirstName = getFormVal(`first-name-${addPeople}`);
+        const addLastName = getFormVal(`last-name-${addPeople}`);
+        additionalPeople[addPeople] = {
+            firstName: addFirstName,
+            lastName: addLastName,
+        }
+    };
     elements.modal.classList.remove('modal--hide');
     elements.formSend.classList.remove('u-hide');
     const newMessageRef = messagesRef.push();
@@ -42,7 +55,8 @@ const formSubmit = (event) => {
         firstName: firstName,
         lastName: lastName,
         email: email,
-        message: message
+        message: message,
+        additionalPeople: additionalPeople
     })
     .then(() => {
         elements.sendMsg.classList.remove('u-hide');
@@ -60,9 +74,92 @@ const getFormVal = (inputId) => {
     return document.getElementById(inputId).value;
 }
 
-const saveMessage = (firstName, lastName, email, message) => {
-    
+elements.btnModalClose.addEventListener('click', () => {
+    closeMobileNav();
+}); 
+
+// Admin - getting participants list
+elements.adminDash.addEventListener('click', () => {
+    const pass = window.prompt('Strona przeznaczona tylko dla administratorów. Wprowadź hasło: ');
+    let peopleList = null;
+
+    firebaseAuth.signInWithEmailAndPassword('radziminski.j@gmail.com', pass)
+    .then(() => {
+        messagesRef.on('value', (data) => {
+            peopleList = data.val();
+            let fileContent = "Imie,Nazwisko,Email,Wiadomosc\n";
+            for (let person in peopleList) {
+                fileContent += personToString(peopleList[person]);
+            }
+            fileDownload('lista_uczestnikow.txt', fileContent);
+            messagesRef.off();
+        }, error => {
+            window.alert("There was an error downloading the list." + error);
+            return;
+        });
+    })
+    .catch( err => {
+        window.alert("There was an error loggin in" + err);
+        return;
+    });
+});
+
+function personToString(person) {
+    let retString = "";
+    retString += person.firstName;
+    retString += ',';
+    retString += person.lastName;
+    retString += ',';
+    retString += person.email;
+    retString += ',';
+    retString += person.message;
+    retString += '\n';
+    if (person.additionalPeople) {
+        for (let addPerson in person.additionalPeople) {
+            retString += person.additionalPeople[addPerson].firstName;
+            retString += ',';
+            retString += person.additionalPeople[addPerson].lastName;
+            retString += ',\n';
+        }
+    }
+    return retString;
 }
+
+elements.addPersonBtn.addEventListener('click', () => {
+    elements.morePeople.style.display = 'block';
+
+    elements.morePeople.insertAdjacentHTML('beforeend', `
+        <div class="contact-form__additional-person" id="person-${additionalPeopleCounter}">
+        <h2 class="contact-form__section-title">&rarr; Dodatkowa osoba (${additionalPeopleCounter})</h2>
+        <div class="contact-form__input-field">
+            <label for="first-name" class="contact-form__label">Imię:</label>
+            <div class="contact-form__icon-wrapper">
+                <i class="contact-form__icon"><ion-icon name="person"></ion-icon></i>
+            </div>
+            <input type="text" class="contact-form__input-text" placeholder="Imię" id="first-name-${additionalPeopleCounter}" required>
+        </div>
+
+        <div class="contact-form__input-field">
+            <label for="last-name" class="contact-form__label">Nazwisko:</label>
+            <div class="contact-form__icon-wrapper">
+                <i class="contact-form__icon"><ion-icon name="person"></ion-icon></i>
+            </div>
+            <input type="text" class="contact-form__input-text" placeholder="Nazwisko" id="last-name-${additionalPeopleCounter++}" required>
+        </div>
+        </div>
+    `);
+    elements.removePersonBtn.style.display = 'inline-block';
+})
+
+elements.removePersonBtn.addEventListener('click', () => {
+    const personElement = document.getElementById(`person-${--additionalPeopleCounter}`);
+    personElement.parentElement.removeChild(personElement);
+
+    if(!additionalPeopleCounter) {
+        elements.removePersonBtn.style.display = 'none';
+        elements.morePeople.style.display = 'none';
+    }
+})
 
 // Mobile Nav
 const closeMobileNav = () => {
@@ -145,89 +242,16 @@ document.onreadystatechange = function() {
     }
 }
 
-
-// // Code displaying loader until the bacground image is loaded:
-// const src = $('header').css('background-image');
-// // Getting only url, (whole bg has also linear gradient)
-// let urlSrc = src.slice(56, src.length);
-// const url = urlSrc.match(/\((.*?)\)/)[1].replace(/('|")/g,'');
-
-// const img = new Image();
-// let DOMLoadFlag = false;
-// img.src = url;
-
-// // If both image and site is ready to show:
-// img.onload = function() {
-//     console.log('Loaded')
-
-//     elements.loader.style.display = 'none';
-//     elements.hideWrapper.style.visibility = 'visible';
-    
-// }
-
-
-// window.addEventListener('DOMContentLoaded', (event) => {
-//     DOMLoadFlag = true;
-// });
-
-// if (img.complete && DOMLoadFlag) {
-//     console.log('loaded')
-//     img.onload();
-// }
-
-// Useful code elements:
-
-// // Code displaying loader until the bacground image is loaded:
-// const src = $('header').css('background-image');
-// // Getting only url, (whole bg has also linear gradient)
-// let urlSrc = src.slice(56, src.length);
-// const url = urlSrc.match(/\((.*?)\)/)[1].replace(/('|")/g,'');
-
-// const img = new Image();
-// const startTime = new Date();
-// let DOMLoadFlag = false;
-// let imageLoadFlag = false;
-// img.src = url;
-
-// // If both image and site is ready to show:
-// img.onload = function() {
-//     console.log('Loaded')
-//     const endTime = new Date();
-//     const loadTime = endTime - startTime;
-//     if (loadTime < 600) {
-//         elements.hidden.css('transition', 'none');
-//         elements.loader.css('transition', 'none');
-//     }
-
-//     elements.headingPrimaryMain.addClass('animateLeft');
-//     elements.headingPrimaryMain.css('opacity', 1);
-//     elements.headingPrimarySub.addClass('animateRight');
-//     elements.headingPrimarySub.css('opacity', 1);
-//     elements.btnAnimation.addClass('animateBottom');
-//     elements.btnAnimation.css('opacity', 1);
-//     elements.hidden.css('opacity', 1);
-//     elements.loader.css('opacity', 0);
-    
-// }
-
-// window.addEventListener('DOMContentLoaded', (event) => {
-//     DOMLoadFlag = true;
-// });
-
-// if (img.complete && DOMLoadFlag) {
-//     console.log('loaded')
-//     img.onload();
-//     setTimeout(() => {
-//         $('.loader-box').css('display', 'none');
-//     }, 50);
-// }
-
-
-// // Function allowing 'Smooth scrolling' when link is clicked
-// $(document).on('click', 'a[href^="#"]', function (event) {
-//     event.preventDefault();
-//     const target = $($.attr(this, 'href')).offset().top - 100;
-//     $('html, body').animate({
-//         scrollTop: target,
-//     }, 500);
-// });
+// Downloading list
+function fileDownload(filename, text) {
+    const element = document.createElement('a');
+    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+    element.setAttribute('download', filename);
+  
+    element.style.display = 'none';
+    document.body.appendChild(element);
+  
+    element.click();
+  
+    document.body.removeChild(element);
+  }
