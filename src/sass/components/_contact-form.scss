@@ -214,6 +214,10 @@
 
     &__checkmark:hover &__checkmark--wrapper {
         visibility: visible;
+
+        @include respond(phone) {
+            visibility: hidden;
+        }
     }
 
     &__input-checkbox:checked ~ &__checkmark &__checkmark--wrapper {
