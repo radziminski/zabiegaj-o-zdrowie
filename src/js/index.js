@@ -138,6 +138,17 @@ function personToString(person) {
     return retString;
 }
 
+elements.mapOpen.addEventListener('click', () => {
+    elements.map.classList.remove('u-hide');
+    elements.map.style.opacity = 1;
+    elements.modal.classList.remove('modal--hide');
+});
+
+elements.map.addEventListener('click', () => {
+    closeMobileNav();
+    elements.map.style.opacity = 0;
+});
+
 elements.addPersonBtn.addEventListener('click', () => {
     elements.morePeople.style.display = 'block';
 
@@ -179,6 +190,7 @@ const closeMobileNav = () => {
     elements.mobileNav.classList.add('mobile-nav--hide');
     elements.modal.classList.add('modal--hide');
     elements.formSend.classList.add('u-hide');
+    elements.map.classList.add('u-hide');
     hideMenuCloseIcon();
 }
 

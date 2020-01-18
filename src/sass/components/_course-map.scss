@@ -1,0 +1,15 @@
+.course-map {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    width: 95%;
+    max-width: 80rem;
+    opacity: 0;
+    transition: opacity 0.2s;
+
+    &__img {
+        width: 100%;
+    }
+}

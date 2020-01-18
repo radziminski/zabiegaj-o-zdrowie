@@ -20,6 +20,8 @@ export const elements = {
     removePersonBtn: document.querySelector('.js--remove-person'),
     checkAll: document.querySelector('.js--check-all'),
     allChecks: document.querySelectorAll('.js--check'),
+    map: document.querySelector('.js--map'),
+    mapOpen: document.querySelector('.js--map-open'),
 
     adminDash: document.querySelector('.js--admin'),
 }
