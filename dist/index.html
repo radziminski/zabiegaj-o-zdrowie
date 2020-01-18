@@ -65,18 +65,18 @@
                 
                 <div class="modal modal--hide js--modal">&nbsp;</div>
 
-                <div class="form-send u-hide  js--form-send ">
+                <div class="form-send u-hide js--form-send ">
                     <div class="loader-box   js--form-loader">
                         <div class="loader"><div></div><div></div></div>
                     </div>
                     <div class="form-send__success u-hide-o  js--send-msg">
-                        <div class="form-send__msg">Twoje zgłoszenie zostało wysłane!</div>
+                        <div class="form-send__msg u-centered-text">Twoje zgłoszenie zostało wysłane!</div>
                         <div class="form-send__msg--2">Prosimy o dobrowolne wpłacenie chociaż drobnej sumy na podany nr konta, w ramach opłaty wpisowej. Cała kwota uzyskana w trakcie zapisów i samym dniu wydarzenia, zostanie przekazana fundacji Dzieciom „Zdążyć z pomocą”.
-                            <br><span class="u-align-left">Dane do przelewu:
-                            <br>Odbiorca: ... 
+                            <br>Dane do przelewu:<div class="u-align-left">
+                            <br>Odbiorca: Małgorzata Markowska
                             <br>Numer konta: 04 1050 1025 1000 0097 2411 8873
                             <br>Tytuł: Bieg Charytatywny [Imię i Nazwisko nadawcy]
-                            </span>
+                            </div>
                             <br>Bardzo dziękujemy za przekazane wsparcie!</div>
                         <button class="btn btn--full-2 form-send__btn js--button-close-modal">Powrót</button>
                         
@@ -141,7 +141,8 @@
                         <div class="col-1-of-3 u-centered-text">
                             <i class="info-icon"><ion-icon name="calendar"></ion-icon></i>
                             <h3 class="heading-small">29 II 2020</h3>
-                            <p class="paragraph">Bieg odbędzie się 29 lutego (sobota), o godzinie 10:00 w <a href="https://goo.gl/maps/q6H4URQNhTHQUqGQA" class="u-link" target="_blank">Kampinoskim Parku Narodowym na polanie Jakubowej, przy siedzibie KPN</a>. Dystans biegu wynosi 5 kilometrów. Na nasze wydarzenie zapraszamy wszystkich chętnych, najlepiej z całą rodziną. Będzie to okazja, żeby w miłej atmosferze spędzić sobotni poranek, zarazem wspomagając drugiego człowieka.
+                            <p class="paragraph">Bieg odbędzie się 29 lutego (sobota), o godzinie 10:00 w <a href="https://goo.gl/maps/K5XKP4i7N3BwpRPbA" class="u-link" target="_blank">Kampinoskim Parku Narodowym na polanie Jakubowej, przy siedzibie KPN</a>. Dystans biegu wynosi 5 kilometrów. Na nasze wydarzenie zapraszamy wszystkich chętnych, najlepiej z całą rodziną. Będzie to okazja, żeby w miłej atmosferze spędzić sobotni poranek, zarazem wspomagając drugiego człowieka.
+                            
                             </p>
                         </div>
                         <!-- <div class="col-1-of-4 u-centered-text">
@@ -200,7 +201,16 @@
                             <a class="btn btn--full-small js--remove-person" style="display: none;">- Usuń osobę</a>
                             <a class="btn btn--full-small u-margin-bottom-small js--add-person">+ Dodaj osobę</a>
                             
-                            <h2 class="contact-form__checks-title u-margin-top-small">Zgody:</h2>
+                            <h2 class="contact-form__checks-title u-margin-top-small">Wpisowe:</h2>
+                            <div class="contact-form__msg ">Prosimy o dobrowolne wpłacenie chociaż drobnej sumy na podany nr konta, w ramach opłaty wpisowej. Cała kwota uzyskana w trakcie zapisów i samym dniu wydarzenia, zostanie przekazana fundacji Dzieciom „Zdążyć z pomocą”.
+                                <br>Dane do przelewu:<div class="u-align-left">
+                                <span class="u-bolded">Odbiorca:&emsp;</span> Małgorzata Markowska
+                                <br><span class="u-bolded">Numer konta:&emsp;</span> 04 1050 1025 1000 0097 2411 8873
+                                <br><span class="u-bolded">Tytuł:&emsp;</span> Bieg Charytatywny [Imię i Nazwisko nadawcy]
+                                </div>
+                                <div class="u-centered-text u-margin-top-tiny">Bardzo dziękujemy za przekazane wsparcie!</div></div>
+
+                            <h2 class="contact-form__checks-title u-margin-top-tiny">Zgody:</h2>
 
                             <div class="contact-form__input-checkbox-field  ">
                                 <span class="contact-form__all-check">Zaznacz wszystkie</span>
@@ -241,6 +251,8 @@
                                     <span class="contact-form__checkmark"><div class="contact-form__checkmark--wrapper">&nbsp;</div></span>
                                 </label>
                             </div>
+
+                            
                                                        
                             <div class="contact-form__btn"><button class="contact-form__btn btn btn--full btn--short u-margin-bottom-small">Wyślij!</button></div>
                         </form>
