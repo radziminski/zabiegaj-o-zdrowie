@@ -65,13 +65,21 @@
                 
                 <div class="modal modal--hide js--modal">&nbsp;</div>
 
-                <div class="form-send  u-hide js--form-send ">
-                    <div class="loader-box  js--form-loader">
+                <div class="form-send u-hide  js--form-send ">
+                    <div class="loader-box   js--form-loader">
                         <div class="loader"><div></div><div></div></div>
                     </div>
-                    <div class="form-send__success u-hide js--send-msg">
+                    <div class="form-send__success u-hide-o  js--send-msg">
                         <div class="form-send__msg">Twoje zgłoszenie zostało wysłane!</div>
-                        <button class="btn btn--full-2 js--button-close-modal">Powrót</button>
+                        <div class="form-send__msg--2">Prosimy o dobrowolne wpłacenie chociaż drobnej sumy na podany nr konta, w ramach opłaty wpisowej. Cała kwota uzyskana w trakcie zapisów i samym dniu wydarzenia, zostanie przekazana fundacji Dzieciom „Zdążyć z pomocą”.
+                            <br><span class="u-align-left">Dane do przelewu:
+                            <br>Odbiorca: ... 
+                            <br>Numer konta: 04 1050 1025 1000 0097 2411 8873
+                            <br>Tytuł: Bieg Charytatywny [Imię i Nazwisko nadawcy]
+                            </span>
+                            <br>Bardzo dziękujemy za przekazane wsparcie!</div>
+                        <button class="btn btn--full-2 form-send__btn js--button-close-modal">Powrót</button>
+                        
                     </div>
                 </div>
 
@@ -123,7 +131,7 @@
                         <div class="col-1-of-3 u-centered-text">
                             <i class="info-icon"><ion-icon name="hand"></ion-icon></i>
                             <h3 class="heading-small">Kim jesteśmy?</h3>
-                            <p class="paragraph">Jesteśmy grupą siedmiu licealistek, które chcą zmienić coś w swoim otoczeniu na lepsze, dlatego w ramach olimpiady <i>Zwolnieni z teorii</i> organizujemy bieg charytatywny <span class="u-bolded">Zabiegaj o zdrowie.</span> Cały dochód z biegu zostanie przeznaczony na <span class="u-bolded">Fundację Dzieciom "Zdążyć z pomocą"</span>.</p>
+                            <p class="paragraph">Jesteśmy grupą siedmiu licealistek, które chcą zmienić coś w swoim otoczeniu na lepsze, dlatego w ramach olimpiady <i>Zwolnieni z teorii</i> organizujemy bieg charytatywny <span class="u-bolded">Zabiegaj o zdrowie.</span> Cały dochód z biegu zostanie przeznaczony na <a href="https://dzieciom.pl/" class="u-link" target="_blank">Fundację Dzieciom "Zdążyć z pomocą"</a>.</p>
                         </div>
                         <div class="col-1-of-3 u-centered-text">
                             <i class="info-icon"><ion-icon name="person"></ion-icon></i>
@@ -192,16 +200,48 @@
                             <a class="btn btn--full-small js--remove-person" style="display: none;">- Usuń osobę</a>
                             <a class="btn btn--full-small u-margin-bottom-small js--add-person">+ Dodaj osobę</a>
                             
-                            
+                            <h2 class="contact-form__checks-title u-margin-top-small">Zgody:</h2>
 
-                            <div class="contact-form__input-checkbox-field">
-                                Zapoznałem/am się z <a href="https://www.kampinoski-pn.gov.pl/turystyka/regulamin?fbclid=IwAR0MXapC_A1yA98UsnaLgk3w0QbOaaS6P8YfQ6gRbk47w9F9LJ7KAdGszMM" class="u-link" target="_blank">regulaminem Kampinowskiego Parku Narodowego</a>.
-                                <label for="rules" class="contact-form__label-checkbox">
-                                    <input type="checkbox" class="contact-form__input-checkbox" id="rules" required> 
+                            <div class="contact-form__input-checkbox-field  ">
+                                <span class="contact-form__all-check">Zaznacz wszystkie</span>
+                                <label for="all" class="contact-form__label-checkbox">
+                                    <input type="checkbox" class="contact-form__input-checkbox js--check-all" id="all"> 
                                     <span class="contact-form__checkmark"><div class="contact-form__checkmark--wrapper">&nbsp;</div></span>
                                 </label>
                             </div>
-                                                                  
+
+                            <div class="contact-form__input-checkbox-field  ">
+                                Zapoznałem/am się i akceptuję <a href="https://www.kampinoski-pn.gov.pl/turystyka/regulamin?fbclid=IwAR0MXapC_A1yA98UsnaLgk3w0QbOaaS6P8YfQ6gRbk47w9F9LJ7KAdGszMM" class="u-link" target="_blank">regulamin biegu charytatywnego Zabiegaj o Zdrowie</a>.
+                                <label for="rules-1" class="contact-form__label-checkbox">
+                                    <input type="checkbox" class="contact-form__input-checkbox js--check" id="rules-1" required> 
+                                    <span class="contact-form__checkmark"><div class="contact-form__checkmark--wrapper">&nbsp;</div></span>
+                                </label>
+                            </div>
+
+                            <div class="contact-form__input-checkbox-field">
+                                Zapoznałem/am się i akceptuję <a href="https://www.kampinoski-pn.gov.pl/turystyka/regulamin?fbclid=IwAR0MXapC_A1yA98UsnaLgk3w0QbOaaS6P8YfQ6gRbk47w9F9LJ7KAdGszMM" class="u-link" target="_blank">regulamin Kampinowskiego Parku Narodowego</a>.
+                                <label for="rules-2" class="contact-form__label-checkbox">
+                                    <input type="checkbox" class="contact-form__input-checkbox js--check" id="rules-2" required> 
+                                    <span class="contact-form__checkmark"><div class="contact-form__checkmark--wrapper">&nbsp;</div></span>
+                                </label>
+                            </div>
+
+                            <div class="contact-form__input-checkbox-field">
+                                Zgadzam się na przetwarzanie moich danych osobowych przez administratorów „Zabiegaj o Zdrowie” będących administratorem bazy danych w zgodzie z postanowieniami Rozporządzenia Parlamentu Europejskiego i Rady UE zwanych w skrócie RODO).
+                                <label for="rodo" class="contact-form__label-checkbox">
+                                    <input type="checkbox" class="contact-form__input-checkbox js--check" id="rodo" required> 
+                                    <span class="contact-form__checkmark"><div class="contact-form__checkmark--wrapper">&nbsp;</div></span>
+                                </label>
+                            </div>
+
+                            <div class="contact-form__input-checkbox-field u-margin-bottom-medium ">
+                                Wyrażam zgodę na udostępnienie moich danych organizatorowi tych zawodów w celach organizacyjnych.  
+                                <label for="rodo-2" class="contact-form__label-checkbox">
+                                    <input type="checkbox" class="contact-form__input-checkbox js--check" id="rodo-2" required> 
+                                    <span class="contact-form__checkmark"><div class="contact-form__checkmark--wrapper">&nbsp;</div></span>
+                                </label>
+                            </div>
+                                                       
                             <div class="contact-form__btn"><button class="contact-form__btn btn btn--full btn--short u-margin-bottom-small">Wyślij!</button></div>
                         </form>
                     </div>

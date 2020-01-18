@@ -18,6 +18,8 @@ export const elements = {
     morePeople: document.querySelector('.js--other-people'),
     addPersonBtn: document.querySelector('.js--add-person'),
     removePersonBtn: document.querySelector('.js--remove-person'),
+    checkAll: document.querySelector('.js--check-all'),
+    allChecks: document.querySelectorAll('.js--check'),
 
     adminDash: document.querySelector('.js--admin'),
 }

@@ -39,7 +39,7 @@
         color: $color-primary;
         margin-bottom: 1rem;
 
-        @include respond(small-phone) {
+        @include respond(phone) {
             margin-bottom: 0.1rem;
         }
     }
@@ -147,28 +147,36 @@
         border: 0px solid rgba($color-black, 0.05);
     }
 
+    &__checks-title {
+        font-size: 1.8rem;
+    }
+
+    &__all-check {
+        font-size: 1.6rem;
+    }
+
     &__input-checkbox-field {
         
         display: block;
-        margin-bottom: 3rem;
-        margin-left: 1rem;
-        margin-top: 2rem;
+        margin: 0.8rem 0 0.8rem 1rem;
+
         position: relative;
         padding-left: 4rem;
+        font-size: 1.6rem;
 
         @include respond (phone) {
-            font-size: 1.6rem;
+            font-size: 1.4rem;
         }
 
     }
 
     &__input-checkbox {
         position: absolute;
-        top: 50%;
+        top: 53%;
         left: 0;
         transform: translateY(-50%);
-        height: 2.8rem;
-        width: 2.8rem;
+        height: 2.6rem;
+        width: 2.6rem;
         opacity: 0;
         cursor: pointer;
         border-radius: 50%;
@@ -176,15 +184,19 @@
 
     &__checkmark {
         position: absolute;
-        top: 50%;
+        top: 53%;
         left: 0;
         transform: translateY(-50%);
-        height: 2.8rem;
-        width: 2.8rem;
+        height: 2.4rem;
+        width: 2.4rem;
         background-color: transparent;
         border: 3px solid $color-primary;
         border-radius: 50%;
         cursor: pointer;
+
+        @include respond (tab-port) {
+            border: 2px solid $color-primary;
+        }
 
         &--wrapper {
             display: block;
@@ -198,8 +210,9 @@
                 content: " ";
                 display: block;
                 background-color: $color-primary;
-                height: 1.4rem;
-                width: 1.4rem;
+                height: 12px;
+                width: 12px;
+                backface-visibility: hidden;
                 position: absolute;
                 top: 50%;
                 left: 50%;
@@ -215,14 +228,26 @@
     &__checkmark:hover &__checkmark--wrapper {
         visibility: visible;
 
-        @include respond(phone) {
+        @include respond(tab-port) {
             visibility: hidden;
         }
     }
 
     &__input-checkbox:checked ~ &__checkmark &__checkmark--wrapper {
         visibility: visible;
+
+        @include respond(tab-port) {
+            visibility: hidden;
+        }
     }
+
+    @include respond (tab-port) {
+        &__input-checkbox:checked ~ &__checkmark {
+            background-color: $color-primary;
+        }
+    }
+
+    
 
     &__btn {
         margin-bottom: 5rem;
@@ -239,8 +264,8 @@
     transform: translate(-50%, -50%);
     width: 80%;
     max-width: 50rem;
-    height: 80%;
-    max-height: 20rem;
+    //height: 90%;
+    //max-height: 42rem;
     border-radius: 5px;
     background-color: $color-white;
     border: 5px solid $color-primary;
@@ -248,6 +273,11 @@
     z-index: 990;
     padding: 2rem 3rem;
     text-align: center;
+    
+
+    @include respond(phone) { 
+        padding: 1rem 1rem;
+    }
 
     &__success {
         display: block;
@@ -255,13 +285,42 @@
         text-align: center;
     }
 
+    &__btn {
+        animation: none;
+    }
+
     &__msg {
         font-size: 2rem;
         padding: 1rem;
-        margin-bottom: 2rem;
+        padding-bottom: 0.3rem;
+        
+
+        &--2 {
+            font-size: 1.6rem;
+            margin-bottom: 2rem;
+            padding-top: 0;
+        }
+
+        @include respond(phone) { 
+            font-size: 1.8rem;
+            &--2 {
+                font-size: 1.3rem;
+                margin-bottom: 1rem;
+                padding-top: 0;
+            }
+        }
+
         @include respond(small-phone) { 
             font-size: 1.8rem;
-            margin-bottom: 1rem;
+            margin-bottom: 0;
+            padding: 0.5rem;
+
+            &--2 {
+                font-size: 1.2rem;
+                margin-bottom: 1rem;
+                padding: 0.5rem;
+                padding-top: 0;
+            }
         }
     }
 }

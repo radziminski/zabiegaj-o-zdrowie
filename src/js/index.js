@@ -59,7 +59,7 @@ const formSubmit = (event) => {
         additionalPeople: additionalPeople
     })
     .then(() => {
-        elements.sendMsg.classList.remove('u-hide');
+        elements.sendMsg.classList.remove('u-hide-o');
         elements.formLoader.classList.add('u-hide');
     })
     .catch(err => {
@@ -77,6 +77,19 @@ const getFormVal = (inputId) => {
 elements.btnModalClose.addEventListener('click', () => {
     closeMobileNav();
 }); 
+
+elements.checkAll.addEventListener('change', () => {
+    
+    let flag = false;
+    if (elements.checkAll.checked) {
+        console.log('check')
+        flag = true;
+    }
+
+    elements.allChecks.forEach(element => {
+        element.checked = flag;
+    })
+})
 
 // Admin - getting participants list
 elements.adminDash.addEventListener('click', () => {

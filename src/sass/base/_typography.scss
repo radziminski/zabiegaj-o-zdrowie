@@ -35,14 +35,14 @@ body {
 
 .heading-secondary {
     
-    font-size: 2.5rem;
+    font-size: 2.4rem;
     color: $color-primary-dark;
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 3px;
 
     @include respond(tab-land) {
-        font-size: 2.2rem;
+        font-size: 2.1rem;
         letter-spacing: 1.5px;
     }
     @include respond(tab-port) {
@@ -50,10 +50,10 @@ body {
         letter-spacing: 1px;
     }
     @include respond(small-phone) {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
     @include respond(small-phone-land) {
-        font-size: 1.4rem;
+        font-size: 1.3rem;
     }
 }
 

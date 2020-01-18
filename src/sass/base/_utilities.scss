@@ -6,8 +6,16 @@
     margin-bottom: 2rem !important;
 }
 
+.u-margin-top-small {
+    margin-top: 2rem !important;
+}
+
 .u-centered-text {
     text-align: center;
+}
+
+.u-align-left {
+    text-align: left !important;
 }
 
 .u-justified-text {
@@ -40,4 +48,8 @@
 
 .u-hide {
     visibility: hidden !important;
+}
+
+.u-hide-o {
+    opacity: 0 !important;
 }
