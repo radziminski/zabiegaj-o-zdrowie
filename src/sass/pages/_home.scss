@@ -41,6 +41,14 @@
 .section-sponsors {
     background-color: $color-white;
     padding: 2rem 2rem 5rem 2rem;
+
+    @include respond(tab-port) {
+        padding: 2rem;
+    }
+    @include respond(small-phone) {
+        padding: 1.5rem 0;
+    }
+
     &__row-wrapper {
         width: 100%;
         display: flex;
@@ -48,10 +56,25 @@
         align-items: center;
         justify-content: space-around;
         margin-bottom: 3rem;
+
+
+        @include respond(tab-port) {
+
+            padding: 0 2rem;
+            margin-bottom: 2rem;
+        }
     }
 
     &__item {
         width: 12rem;
-        height: 12rem;
+        height: auto;
+
+        @include respond(tab-port) {
+            width: 10rem;
+            
+        }
+        @include respond(small-phone) {
+            width: 6rem;
+        }
     }
 }
