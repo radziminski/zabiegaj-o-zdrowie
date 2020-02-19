@@ -46,7 +46,7 @@
         cursor: pointer;
 
         &:hover {
-            transform: translate(-50%, -40%) scale(1.3);
+            transform: translate(-50%, -40%) scale(1.2);
         }
 
         @include respond(small-phone-land) {
@@ -145,7 +145,7 @@
     &--top {
         transform: scale(0.9) translateY(5rem);
         box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
-    
+
         @include respond(small-phone) {
             transform: scale(0.9) translateY(2rem);
         }

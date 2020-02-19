@@ -72,6 +72,16 @@ body {
         background-color: $color-primary;
         margin: 0 auto;
     }
+
+    &--small {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+        text-transform: uppercase;
+        
+        &:after {
+            display: none;
+        }
+    }
 }
 
 .heading-small {

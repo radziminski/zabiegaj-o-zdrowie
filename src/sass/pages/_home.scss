@@ -38,3 +38,20 @@
     }
 }
 
+.section-sponsors {
+    background-color: $color-white;
+    padding: 2rem 2rem 5rem 2rem;
+    &__row-wrapper {
+        width: 100%;
+        display: flex;
+        padding: 0 5rem;
+        align-items: center;
+        justify-content: space-around;
+        margin-bottom: 3rem;
+    }
+
+    &__item {
+        width: 12rem;
+        height: 12rem;
+    }
+}
