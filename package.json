@@ -8,7 +8,7 @@
     "build": "webpack --mode production",
     "start": "webpack-dev-server --mode development --open",
     "deploy": "gh-pages -d dist",
-    "git:update": "git add . && git commit -m \"Sponsors Added\" && git push",
+    "git:update": "git add . && git commit -m \"Update Regulamin\" && git push",
     "full-deploy": "npm run build && npm run git:update && npm run deploy"
   },
   "author": "Jan Radzimiński",
